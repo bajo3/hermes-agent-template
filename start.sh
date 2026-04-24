@@ -16,4 +16,8 @@ fi
 
 [ ! -f /data/.hermes/.env ] && touch /data/.hermes/.env
 
-exec python /app/server.py
+echo "Starting WhatsApp pairing..."
+export HOME=/data
+export HERMES_HOME=/data/.hermes
+
+exec hermes whatsapp
